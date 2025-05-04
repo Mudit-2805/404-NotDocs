@@ -1,0 +1,438 @@
+/* Consultant Styles */
+.consultant-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.consultant-content {
+  padding: var(--spacing-xl);
+  flex-grow: 1;
+}
+
+.consultant-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Doctor List */
+.doctor-list {
+  margin-bottom: var(--spacing-lg);
+}
+
+.doctors {
+  margin-bottom: var(--spacing-md);
+}
+
+.doctor-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-sm);
+  cursor: pointer;
+  transition: var(--transition-short);
+  border: 1px solid transparent;
+}
+
+.doctor-item:hover {
+  background-color: var(--neutral-200);
+}
+
+.doctor-item.active {
+  background-color: var(--primary-light);
+  border-color: var(--primary-color);
+}
+
+.doctor-item.unavailable {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.doctor-avatar {
+  position: relative;
+  margin-right: var(--spacing-md);
+}
+
+.doctor-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.status-indicator.available {
+  background-color: var(--secondary-color);
+}
+
+.status-indicator.unavailable {
+  background-color: var(--neutral-500);
+}
+
+.doctor-info {
+  flex-grow: 1;
+}
+
+.doctor-info h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: var(--neutral-800);
+}
+
+.doctor-info p {
+  font-size: 14px;
+  color: var(--neutral-600);
+  margin-bottom: 2px;
+}
+
+.availability-status {
+  font-size: 12px;
+  color: var(--secondary-color);
+}
+
+.doctor-item.unavailable .availability-status {
+  color: var(--neutral-500);
+}
+
+.find-new-doctor {
+  text-align: center;
+}
+
+.find-doctor-btn {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--neutral-200);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius-sm);
+  color: var(--neutral-700);
+  transition: var(--transition-short);
+}
+
+.find-doctor-btn:hover {
+  background-color: var(--neutral-300);
+}
+
+/* Prescriptions */
+.prescriptions {
+  margin-bottom: var(--spacing-lg);
+}
+
+.prescription-tabs {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.prescription-tabs .tab-button {
+  flex: 1;
+  text-align: center;
+  padding: var(--spacing-sm) 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--neutral-600);
+  font-weight: 500;
+}
+
+.prescription-tabs .tab-button:hover {
+  color: var(--primary-color);
+}
+
+.prescription-tabs .tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: none;
+}
+
+.prescription-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.prescription-item {
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  background-color: var(--neutral-100);
+}
+
+.prescription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.prescription-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--neutral-800);
+}
+
+.refill-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: 12px;
+}
+
+.prescription-details {
+  font-size: 14px;
+  color: var(--neutral-700);
+}
+
+.prescription-details p {
+  margin-bottom: 4px;
+}
+
+.no-prescriptions {
+  text-align: center;
+  padding: var(--spacing-md);
+  color: var(--neutral-600);
+}
+
+/* Chat Interface */
+.chat-interface {
+  background-color: var(--neutral-100);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.doctor-info {
+  display: flex;
+  align-items: center;
+}
+
+.doctor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: var(--spacing-md);
+}
+
+.chat-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.video-call-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  background-color: var(--neutral-200);
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  max-height: 500px;
+}
+
+.message {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  max-width: 80%;
+}
+
+.message.user {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.message.doctor {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+.message.user .message-content {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius-sm) 0 var(--border-radius-sm) var(--border-radius-sm);
+}
+
+.message.doctor .message-content {
+  background-color: white;
+  color: var(--neutral-800);
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.message-time {
+  display: block;
+  font-size: 10px;
+  margin-top: var(--spacing-xs);
+  opacity: 0.8;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--neutral-300);
+  gap: var(--spacing-sm);
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: var(--spacing-md);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+}
+
+.chat-input button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0 var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+
+.no-selection {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neutral-200);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.no-selection-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--neutral-300);
+  border-radius: 50%;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.no-selection-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--neutral-500);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'%3E%3C/path%3E%3Ccircle cx='9' cy='7' r='4'%3E%3C/circle%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'%3E%3C/path%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'%3E%3C/path%3E%3C/svg%3E");
+  mask-size: cover;
+}
+
+.no-selection h2 {
+  font-size: 20px;
+  margin-bottom: var(--spacing-sm);
+  color: var(--neutral-700);
+}
+
+.no-selection p {
+  color: var(--neutral-600);
+  max-width: 300px;
+}
+
+.attachments {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-top: 1px solid var(--neutral-300);
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.attachment-button {
+  background: none;
+  border: 1px solid var(--neutral-300);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 12px;
+  color: var(--neutral-700);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition-short);
+}
+
+.attachment-button:hover {
+  background-color: var(--neutral-200);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .consultant-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .consultant-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .consultant-sidebar .doctor-list,
+  .consultant-sidebar .prescriptions {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .consultant-content {
+    padding: var(--spacing-md);
+  }
+  
+  .consultant-sidebar {
+    grid-template-columns: 1fr;
+  }
+  
+  .consultant-sidebar .doctor-list {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .message {
+    max-width: 90%;
+  }
+  
+  .attachments {
+    justify-content: center;
+  }
+}

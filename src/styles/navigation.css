@@ -1,0 +1,142 @@
+/* Navigation Styles */
+.nav-container {
+  background-color: var(--neutral-100);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-left: var(--spacing-sm);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--neutral-700);
+  cursor: pointer;
+}
+
+.navigation {
+  padding: var(--spacing-sm) var(--spacing-xl);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-right: var(--spacing-lg);
+}
+
+.nav-list li a {
+  display: flex;
+  align-items: center;
+  color: var(--neutral-700);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-short);
+}
+
+.nav-list li a span {
+  margin-left: var(--spacing-sm);
+}
+
+.nav-list li:hover a {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.nav-list li.active a {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.logout-btn {
+  margin-left: auto !important;
+}
+
+.logout-btn a {
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .navigation {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: var(--neutral-100);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
+    z-index: 1000;
+    transition: var(--transition-medium);
+  }
+  
+  .navigation.open {
+    display: block;
+  }
+  
+  .overlay.visible {
+    display: block;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+  }
+  
+  .nav-list li {
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .nav-list li a {
+    padding: var(--spacing-md);
+  }
+  
+  .logout-btn {
+    margin-top: var(--spacing-xl);
+  }
+}

@@ -1,0 +1,230 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f7f9fc;
+}
+
+/* CSS Variables for consistent theming */
+:root {
+  /* Primary Colors */
+  --primary-color: #1a73e8;
+  --primary-light: #e8f0fe;
+  --primary-dark: #0d47a1;
+  
+  /* Secondary Colors */
+  --secondary-color: #34a853;
+  --secondary-light: #e6f4ea;
+  --secondary-dark: #1e8e3e;
+  
+  /* Accent Colors */
+  --accent-color: #fbbc04;
+  --accent-light: #fef7e0;
+  --accent-dark: #f29900;
+  
+  /* Error/Warning Colors */
+  --error-color: #ea4335;
+  --error-light: #fce8e6;
+  --error-dark: #c5221f;
+  
+  /* Neutral Colors */
+  --neutral-100: #ffffff;
+  --neutral-200: #f8f9fa;
+  --neutral-300: #ebeef2;
+  --neutral-400: #dadce0;
+  --neutral-500: #9aa0a6;
+  --neutral-600: #70757a;
+  --neutral-700: #5f6368;
+  --neutral-800: #3c4043;
+  --neutral-900: #202124;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.1), 0 1px 3px 1px rgba(60, 64, 67, 0.1);
+  --shadow-md: 0 4px 8px 0 rgba(60, 64, 67, 0.1), 0 1px 3px 0 rgba(60, 64, 67, 0.15);
+  --shadow-lg: 0 6px 10px 0 rgba(60, 64, 67, 0.1), 0 1px 18px 0 rgba(60, 64, 67, 0.12);
+  --shadow-xl: 0 8px 12px 0 rgba(60, 64, 67, 0.12), 0 4px 4px 0 rgba(60, 64, 67, 0.1);
+  
+  /* Transitions */
+  --transition-short: 0.15s ease-in-out;
+  --transition-medium: 0.3s ease-in-out;
+  --transition-long: 0.5s ease-in-out;
+}
+
+/* Common Layout & Components */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--neutral-800);
+  margin-bottom: var(--spacing-xs);
+}
+
+.page-header p {
+  color: var(--neutral-600);
+  font-size: 16px;
+}
+
+/* Card Styles */
+.dashboard-card,
+.diagnosis-card,
+.consultant-card,
+.profile-card {
+  background: var(--neutral-100);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition-short);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button.primary-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+button.secondary-btn {
+  background-color: var(--neutral-200);
+  color: var(--neutral-800);
+  border: 1px solid var(--neutral-400);
+}
+
+button.secondary-btn:hover {
+  background-color: var(--neutral-300);
+}
+
+/* Form Styles */
+input, select, textarea {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--neutral-800);
+  transition: var(--transition-short);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+input:disabled, select:disabled, textarea:disabled {
+  background-color: var(--neutral-200);
+  cursor: not-allowed;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: 14px;
+  color: var(--neutral-700);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Loading/Typing Indicators */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.typing-indicator span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--neutral-500);
+  animation: typing 1s infinite ease-in-out alternate;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes typing {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .page-header h1 {
+    font-size: 24px;
+  }
+  
+  .dashboard-card,
+  .diagnosis-card,
+  .consultant-card,
+  .profile-card {
+    padding: var(--spacing-md);
+  }
+}
