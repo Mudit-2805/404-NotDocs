@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import '../../styles/navigation.css';
 
-// Import icons
 import { 
   Home,
   Stethoscope, 
@@ -11,11 +11,14 @@ import {
   MessageCircle, 
   User,
   Menu,
-  X
+  X,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 const Navigation = () => {
   const { currentUser, logout } = useAuth();
+  const { darkMode, toggleDarkMode } = useTheme();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -45,8 +48,13 @@ const Navigation = () => {
         <div className="logo">
           <span className="logo-text">MediCare</span>
         </div>
-        <div className="mobile-toggle" onClick={toggleMenu}>
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        <div className="nav-actions">
+          <button className="theme-toggle" onClick={toggleDarkMode}>
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <div className="mobile-toggle" onClick={toggleMenu}>
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </div>
         </div>
       </div>
 

@@ -140,3 +140,16 @@
     margin-top: var(--spacing-xl);
   }
 }
+
+
+:root {
+  --neutral-100: #ffffff;
+  --neutral-300: #cccccc;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+  --neutral-100: #1e1e1e;
+  --neutral-300: #444444;
+  --shadow-sm: 0 1px 2px rgba(255, 255, 255, 0.1);
+}
