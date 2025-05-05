@@ -35,19 +35,39 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { path: '/dashboard', name: 'Home', icon: <Home size={20} /> },
-    { path: '/diagnosis', name: 'Diagnosis', icon: <Stethoscope size={20} /> },
-    { path: '/pharmacy', name: 'Pharmacy', icon: <Pill size={20} /> },
-    { path: '/consultant', name: 'Consultancy', icon: <MessageCircle size={20} /> },
-    { path: '/profile', name: 'Profile', icon: <User size={20} /> }
+    { path: '/dashboard', name: 'Home'},
+    { path: '/diagnosis', name: 'Diagnosis'},
+    { path: '/pharmacy', name: 'Pharmacy'},
+    { path: '/consultant', name: 'Consultancy'},
+    { path: '/profile', name: 'Profile'}
   ];
 
   return (
     <div className="nav-container">
       <div className="nav-header">
         <div className="logo">
-          <span className="logo-text">MediCare</span>
+          <span className="logo-text">Immunet</span>
         </div>
+
+        <div className="nav-menu">
+          <ul className="nav-list">
+            {navItems.map((item) => (
+              <li 
+                key={item.path} 
+                className={location.pathname === item.path ? 'active' : ''}
+                onClick={closeMenu}
+              >
+                <Link to={item.path}>
+                  <span>{item.name}</span>
+                </Link>
+              </li>
+            ))}
+            <li className="logout-btn" onClick={handleLogout}>
+              <a>Logout</a>
+            </li>
+          </ul>
+        </div>
+
         <div className="nav-actions">
           <button className="theme-toggle" onClick={toggleDarkMode}>
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -57,6 +77,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+
 
       <nav className={`navigation ${menuOpen ? 'open' : ''}`}>
         <ul className="nav-list">
