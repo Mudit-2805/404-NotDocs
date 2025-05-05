@@ -58,7 +58,7 @@ const SignInPage = () => {
     return (
       <div className="signin-container">
         <div className="signin-content">
-          <h1 className="app-title">MediCare</h1>
+          <h1 className="app-title">Immunet</h1>
           <p className="app-subtitle">Your personal healthcare companion</p>
           
           <div className="user-type-container">

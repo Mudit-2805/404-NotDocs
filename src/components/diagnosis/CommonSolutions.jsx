@@ -60,7 +60,7 @@ const CommonSolutions = () => {
       
       <div className="tabs">
         {conditions.map(condition => (
-          <button 
+          <button
             key={condition.id}
             className={`tab-button ${activeTab === condition.id ? 'active' : ''}`} 
             onClick={() => setActiveTab(condition.id)}
