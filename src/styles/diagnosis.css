@@ -196,6 +196,7 @@
   max-height: 500px;
   display: flex;
   flex-direction: column;
+  overflow-anchor: none;
 }
 
 .message {
@@ -336,4 +337,72 @@
   .message {
     max-width: 90%;
   }
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --neutral-100: #121111;
+  --neutral-200: #242424;
+  --neutral-300: #302f2f;
+  --neutral-700: #ccc;
+  --neutral-800: #eee;
+  --primary-color: #9933ff;
+  --primary-dark: #9933ff;
+  --error-light: #f8d7da;
+  --error-color: #d9534f;
+  --accent-color: #6c757d;
+  --accent-dark: #5a6268;
+}
+
+.dark-mode .message.user .message-content {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.dark-mode .message.bot .message-content {
+  background-color: var(--neutral-200);
+  color: white;
+}
+
+.dark-mode .chat-messages {
+  background-color: var(--neutral-100);
+}
+
+.dark-mode .chat-input input {
+  background-color: var(--neutral-200);
+  color: white;
+  border: 1px solid var(--neutral-300);
+}
+
+.dark-mode .chat-input button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.dark-mode .chat-input button:disabled {
+  background-color: var(--neutral-400);
+  cursor: not-allowed;
+}
+
+.dark-mode .bot-disclaimer {
+  background-color: var(--neutral-200);
+  color: white;
+}
+
+.dark-mode .disclaimer {
+  background-color: var(--neutral-200);
+}
+
+.dark-mode .disclaimer p {
+  color: white;
+}
+
+.dark-mode .accordion-header {
+  background-color: var(--neutral-300);
+  color: white;
+}
+
+.dark-mode .accordion-content {
+  background-color: var(--neutral-200);
+  color: white;
 }

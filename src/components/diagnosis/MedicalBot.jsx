@@ -10,7 +10,10 @@ const MedicalBot = () => {
 
   // Auto-scroll to bottom of chat
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const chatMessagesContainer = document.querySelector('.chat-messages');
+    if (chatMessagesContainer) {
+      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+    }
   }, [conversation]);
 
   const handleSubmit = (e) => {
