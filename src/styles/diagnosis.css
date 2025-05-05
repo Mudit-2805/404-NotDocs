@@ -341,9 +341,9 @@
 
 /* Dark mode styles */
 .dark-mode {
-  --neutral-100: #121111;
+  --neutral-100: #242424;
   --neutral-200: #242424;
-  --neutral-300: #302f2f;
+  --neutral-300: #242424;
   --neutral-700: #ccc;
   --neutral-800: #eee;
   --primary-color: #9933ff;
